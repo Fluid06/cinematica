@@ -41,10 +41,10 @@ export default function EditMovie({prevMovie, forceReload}) {
         
         $.ajax({
             type: "POST",
-            url: 'https://cinematica.8u.cz/php/handlers/movieEditHandler.php?key=SG91c2thc2VzYWxhbWVtamVkb2JyYTEyMw==',
+            url: 'https://cinematica.8u.cz/php/handlers/dbUpdateMovie.php?key=SG91c2thc2VzYWxhbWVtamVkb2JyYTEyMw==',
             data: {ID: prevMovie["ID"], name: movie.name, release_date: movie.release_date, length: movie.length, minimum_age: movie.minimum_age, main_actor_name: movie.main_actor_name, director_name: movie.director_name, description: movie.description},
             success(data) {
-                if (data === '"Success"') {
+                if (data === 'success') {
                     setSuccessPopUp(true);
 
                     setTimeout(() => {

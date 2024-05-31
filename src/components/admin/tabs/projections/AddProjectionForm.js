@@ -3,7 +3,7 @@ import GreenPopUp from '../../../popUps/GreenPopUp.js'
 import RedPopUp from '../../../popUps/RedPopUp.js'
 import $ from 'jquery'
 
-export default function ProjectionForm() {
+export default function ProjectionForm({forceReload}) {
     const [movies, setMovies] = useState([]);
     const [searchedMovies, setSearchedMovies] = useState([]);
     const [halls, setHalls] = useState([]);
@@ -103,6 +103,7 @@ export default function ProjectionForm() {
                         setTimeout(() => {
                             setSuccessPopUp(false);
                         }, 3000);
+                        setTimeout(() => {forceReload()}, 100);
                     } else {
                         setErrorPopUp(true);
                         console.error(data);

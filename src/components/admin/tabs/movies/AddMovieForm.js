@@ -79,9 +79,10 @@ export default function MovieForm() {
                 <input onClick={() => setSelect(1)} type="text" name="genre" id="genre" placeholder='Zvol žánry *' value={selectedGenres[0]} readOnly className="w-[90%] sm:w-[50%] h-[38px] block p-2 pb-0 mt-5 border-b-2 border-gray-400  bg-transparent text-lg rounded-t-lg outline-none select-none focus:border-b-gray-500 focus:pb-2 transition-all ease-out duration-100"/>
                 <textarea name="description" id="description" rows="1" placeholder="Popis" className='w-[90%] min-h-12 max-h-96 block p-2 pb-0 mt-8 border-2 border-gray-400  bg-transparent text-lg outline-none focus:border-gray-500'></textarea>
                 <div className='mt-8 text-slate-200'>
-                    <label className="text-lg border-b-2 border-gray-400" htmlFor="banner">Zvol banner filmu</label><br/>
+                    <label className="text-lg border-b-2 border-gray-400" htmlFor="banner[]">Zvol banner filmu</label><br/>
                     <input 
                         type="file" 
+                        id="banner[]"
                         name="banner[]"
                         accept='image/*'
                         className='w-full mt-3 text-sm text-wrap sm:text-md'
@@ -90,9 +91,10 @@ export default function MovieForm() {
                     />
                 </div>
                 <div className='mt-8 text-slate-200'>
-                    <label className="text-lg border-b-2 border-gray-400" htmlFor="banner">Zvol poster filmu</label><br/>
+                    <label className="text-lg border-b-2 border-gray-400" htmlFor="poster[]">Zvol poster filmu</label><br/>
                     <input 
                         type="file" 
+                        id="poster[]"
                         name="poster[]"
                         accept='image/*'
                         className='w-full mt-3 text-sm text-wrap sm:text-md'

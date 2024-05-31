@@ -44,7 +44,7 @@ export default function Movies() {
                                     <span className="flex-grow">
                                         <EditMovie prevMovie={data} forceReload={forceReload}/>
                                     </span>
-                                    <span onClick={ () => setTimeout(() => {forceReload()}, 100) }  className="flex-grow">
+                                    <span onClick={ () => setTimeout(() => {forceReload()}, 100) } className="flex-grow">
                                         <DeleteButton id={data['ID'].toString()}/>
                                     </span>
                                 </div>

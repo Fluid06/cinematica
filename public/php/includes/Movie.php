@@ -116,6 +116,48 @@ class Movie
         $conn->close();
     }
 
+    function update($name, $release_date, $length, $minimum_age, $director_name, $main_actor_name, $description)
+    {
+        $server_name = "innodb.endora.cz:3306";
+        $username = "houskasesalamem";
+        $password = "Houskasesalamemjedobra123";
+        $dbname = "kinocinematica";
+
+        $conn = new mysqli($server_name, $username, $password, $dbname);
+        if($conn->connect_error)
+        {
+            self::$error[] = "update: No connection: $conn->connect_error";
+            return;
+        }
+
+        $sql = "UPDATE `movie`
+        SET
+        `name` = '".$name."' ,
+        `release_date` =  '".$release_date."' ,
+        `length` = ".$length." ,
+        `minimum_age` = ".$minimum_age." ,
+        `director_name` =  '".$director_name."' ,
+        `main_actor_name` = '".$main_actor_name."' ,
+        `description` = '".$description."'
+        WHERE `ID` = ".$this->ID." ;";
+
+        $stmt = $conn->prepare($sql);
+        if (!$stmt) 
+        {
+            self::$error[] = "update: Prepare failed: $conn->error";
+            return;
+        }
+
+        if (!$stmt->execute()) 
+        {
+            self::$error[] = "update: No execute: $stmt->error";
+            return;
+        }
+
+        $stmt->close();
+        $conn->close();  
+    }
+
     public function delete()
     {
         $server_name = "innodb.endora.cz:3306";
