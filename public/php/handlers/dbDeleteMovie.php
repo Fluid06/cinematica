@@ -1,19 +1,17 @@
 <?php
 require_once "./../includes/Movie.php";
-if ($_GET['key'] == 'SG91c2thc2VzYWxhbWVtamVkb2JyYTEyMw==') {
+if ($_GET['key'] == 'SG91c2thc2VzYWxhbWVtamVkb2JyYTEyMw==') 
+{
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-        header('Content-Type: application/json; charset=utf-8');
-        header('Access-Control-Allow-Origin: *');
-
-        $id = $_POST['id']; 
-
-        Movie::download("SELECT * FROM `movie` WHERE `ID` = ".$id.";");
+        $id = $_POST['id'];
+        $sql = "SELECT * FROM `movie` WHERE `ID` = ".$id.";";
+        Movie::download($sql);
         Movie::$data[0]->delete();
 
-        if (!empty(Movie::$error)) 
+        if (!empty(Movie::$error) || !empty(Image::$error) || !empty(Genre::$error) || !empty(Projection::$error)) 
         {
-            $response = Movie::$error;
+            $response = [Movie::$error, Image::$error, Genre::$error, Projection::$error];
         }
         else 
         {    

@@ -83,7 +83,7 @@ class Customer
         $conn->close();
     }
 
-    function update($name, $surname, $birthdate, $phone_number, $email, $password)
+    function update($name, $surname, $birthdate, $phone_number, $email)
     {
         $server_name = "innodb.endora.cz:3306";
         $username = "houskasesalamem";
@@ -103,8 +103,7 @@ class Customer
         `surname` = '".$surname."' ,
         `birthdate` = '".$birthdate."' ,
         `phone_number` = '".$phone_number."' ,
-        `email` = '".$email."' ,
-        `password` = '".$password."'
+        `email` = '".$email."'
         WHERE `ID` = ".$this->ID.";";
 
         $stmt = $conn->prepare($sql);

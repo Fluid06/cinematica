@@ -116,7 +116,7 @@ class Movie
         $conn->close();
     }
 
-    function update($name, $release_date, $length, $minimum_age, $director_name, $main_actor_name, $description)
+    function update($name, $release_date, $length, $minimum_age, $director, $actor, $description)
     {
         $server_name = "innodb.endora.cz:3306";
         $username = "houskasesalamem";
@@ -132,14 +132,14 @@ class Movie
 
         $sql = "UPDATE `movie`
         SET
-        `name` = '".$name."' ,
-        `release_date` =  '".$release_date."' ,
-        `length` = ".$length." ,
-        `minimum_age` = ".$minimum_age." ,
-        `director_name` =  '".$director_name."' ,
-        `main_actor_name` = '".$main_actor_name."' ,
+        `name` = '".$name."',
+        `release_date` = '".$release_date."',
+        `length` = ".$length.",
+        `minimum_age` = ".$minimum_age.",
+        `director_name` = '".$director."',
+        `main_actor_name` = '".$actor."',
         `description` = '".$description."'
-        WHERE `ID` = ".$this->ID." ;";
+        WHERE `ID` = ".$this->ID.";";
 
         $stmt = $conn->prepare($sql);
         if (!$stmt) 

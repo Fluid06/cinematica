@@ -2,10 +2,10 @@
 require_once "./../includes/Movie.php";
 if ($_GET['key'] == 'SG91c2thc2VzYWxhbWVtamVkb2JyYTEyMw==') 
 {
+    header('Content-Type: application/json; charset=utf-8');
+    header('Access-Control-Allow-Origin: *');
     if ($_SERVER["REQUEST_METHOD"] == "POST") 
     {
-        header('Content-Type: application/json; charset=utf-8');
-        header('Access-Control-Allow-Origin: *');
 
         $ID = $_POST['ID'];
         $name = $_POST['name'];

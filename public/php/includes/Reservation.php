@@ -123,6 +123,7 @@ public function delete()
     }
 
     $sql = "DELETE FROM `reservation` WHERE `ID` = ".$this->ID.";";
+    $stmt = $conn->prepare($sql);
     if (!$stmt) 
     {
         self::$error[] = "delete: Prepare failed: $conn->error";
