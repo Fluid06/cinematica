@@ -133,7 +133,7 @@ export default function Reservation({data, setReservation}) {
         <>
             {successPopUp && <GreenPopUp msg="Rezervace byla úspěšná"/>}
             {errorPopUp && <RedPopUp msg="Při vytváření rezervace došlo k chybě"/>}
-            <div className="fixed top-0 left-0 md:left-[50%] md:ml-[-300px] lg:ml-[-450px] w-full md:w-[600px] lg:w-[900px] h-[80vh] 2xl:h-fit overflow-y-auto mt-14 p-6 md:mt-28 md:shadow-md md:shadow-gray-800 bg-slate-800 md:rounded-md md:border-[1px] border-b border-slate-50/[0.1] z-50">
+            <div className="fixed left-0 md:left-[50%] md:ml-[-300px] lg:ml-[-450px] w-full md:w-[600px] lg:w-[900px] h-fit overflow-y-auto max-h-[90vh] top-14 p-6 md:top-16 md:shadow-md md:shadow-gray-800 bg-slate-800 md:rounded-md md:border-[1px] border-b border-slate-50/[0.1] z-50">
                 <h3 className="text-xl font-semibold">{data["movie"]["name"]}, {data["is_3D"] === 0 ? "2D" : "3D"}</h3>
                 <div className="space-y-2 text-md sm:text-lg p-4 pb-0">
                     <div className="flex">
