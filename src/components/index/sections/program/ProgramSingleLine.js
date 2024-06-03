@@ -61,7 +61,7 @@ export default function ProgramSingleLine({data, login, setLogin, day}) {
     return (
         <>
             <div className="bg-gray-800 md:grid md:grid-cols-10 border border-slate-50/10 p-3 md:p-6 mt-2">
-                <div onClick={() => handleClick(data["movie_info"], 0)} className="col-span-3 flex flex-col gap-1 md:border-r md:border-r-slate-50/10 text-wrap break-words cursor-pointer">
+                <div className="col-span-3 flex flex-col gap-1 md:border-r md:border-r-slate-50/10 text-wrap break-words">
                     <p className="text-xl mr-4">{data["movie_info"]["name"]}</p>
                     <p className="text-sm mr-4">{data["movie_info"]["director_name"]}</p>
                 </div>
