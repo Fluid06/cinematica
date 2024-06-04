@@ -31,7 +31,6 @@ export default function EditUser({forceReload, prevUser}) {
             document.getElementById('birthdate').type = 'text';
         }
     }
-    console.log(prevUser["ID"], user.name, user.surname, user.birthdate, user.phone_number, user.email);
 
     const handleSubmit = (e) => {
         e.preventDefault();
