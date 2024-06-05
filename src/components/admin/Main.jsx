@@ -32,19 +32,19 @@ class Main extends Component {
                 <div className="flex justify-center items-center rounded-r-lg bg-slate-800 absolute left-[-6.4rem] top-24 duration-300 w-36 h-12 text-lg shadow-lg shadow-slate-900 cursor-pointer 2xl:hover:left-0"
                   onClick={ () => this.handleClick(1) }
                 >
-                  <span className="select-none w-[70%] text-center">Users</span>
+                  <span className="select-none w-[70%] text-center">Uživatelé</span>
                   <FontAwesomeIcon className="text-gray-200 w-[30%] rotate-[270deg] 2xl:rotate-0" icon={ faUsersGear }/>
                 </div>
                 <div className="flex justify-center items-center rounded-r-lg bg-slate-800 absolute left-[-6.4rem] top-40 duration-300 w-36 h-12 text-lg shadow-lg shadow-slate-900 cursor-pointer 2xl:hover:left-0"
                   onClick={ () => this.handleClick(2) }
                 >
-                  <span className="select-none w-[70%] text-center">Movies</span>
+                  <span className="select-none w-[70%] text-center">Filmy</span>
                   <FontAwesomeIcon className="text-gray-200 w-[30%] rotate-[270deg] 2xl:rotate-0" icon={ faFilm }/>
                 </div>
                 <div className="flex justify-center items-center rounded-r-lg bg-slate-800 absolute left-[-8.4rem] top-56 duration-300 w-44 h-12 text-lg shadow-lg shadow-slate-900 cursor-pointer 2xl:hover:left-0"
                   onClick={ () => this.handleClick(3) }
                 >
-                  <span className="select-none w-[70%] text-center">Projections</span>
+                  <span className="select-none w-[70%] text-center">Promítání</span>
                   <FontAwesomeIcon className="relative left-1 text-gray-200 w-[30%] rotate-[270deg] 2xl:rotate-0" icon={ faTicket }/>
                 </div>
               </div>
@@ -58,19 +58,19 @@ class Main extends Component {
                 <div className="flex justify-center items-center rounded-r-lg bg-slate-800 absolute left-[-6.4rem] top-24 duration-300 w-36 h-12 text-lg shadow-lg shadow-slate-900 cursor-pointer 2xl:hover:left-0"
                   onClick={ () => this.handleClick(1) }
                 >
-                  <span className="select-none w-[70%] text-center">Users</span>
+                  <span className="select-none w-[70%] text-center">Uživatelé</span>
                   <FontAwesomeIcon className="text-gray-200 w-[30%] rotate-[270deg] 2xl:rotate-0" icon={ faUsersGear }/>
                 </div>
                 <div className="flex justify-center items-center rounded-r-lg bg-slate-800 absolute left-[-6.4rem] top-40 duration-300 w-36 h-12 text-lg shadow-lg shadow-slate-900 cursor-pointer 2xl:hover:left-0"
                   onClick={ () => this.handleClick(2) }
                 >
-                  <span className="select-none w-[70%] text-center">Movies</span>
+                  <span className="select-none w-[70%] text-center">Filmy</span>
                   <FontAwesomeIcon className="text-gray-200 w-[30%] rotate-[270deg] 2xl:rotate-0" icon={ faFilm }/>
                 </div>
                 <div className="flex justify-center items-center rounded-r-lg bg-slate-800 absolute left-[-8.4rem] top-56 duration-300 w-44 h-12 text-lg shadow-lg shadow-slate-900 cursor-pointer 2xl:hover:left-0"
                   onClick={ () => this.handleClick(3) }
                 >
-                  <span className="select-none w-[70%] text-center">Projections</span>
+                  <span className="select-none w-[70%] text-center">Promítání</span>
                   <FontAwesomeIcon className="relative left-1 text-gray-200 w-[30%] rotate-[270deg] 2xl:rotate-0" icon={ faTicket }/>
                 </div>
               </div>
@@ -79,24 +79,24 @@ class Main extends Component {
           )
         } else if (parseInt(localStorage.getItem("adminTab")) === 3) {
           return (
-            <div className="font-poppins text-gray-200 pt-14">
+            <div className="w-full font-poppins text-gray-200 pt-14">
               <div className='fixed left-[50%] ml-[12rem] rotate-90 z-1 2xl:left-0 2xl:ml-0 2xl:rotate-0'>
                 <div className="flex justify-center items-center rounded-r-lg bg-slate-800 absolute left-[-6.4rem] top-24 duration-300 w-36 h-12 text-lg shadow-lg shadow-slate-900 cursor-pointer 2xl:hover:left-0"
                   onClick={ () => this.handleClick(1) }
                 >
-                  <span className="select-none w-[70%] text-center">Users</span>
+                  <span className="select-none w-[70%] text-center">Uživatelé</span>
                   <FontAwesomeIcon className="text-gray-200 w-[30%] rotate-[270deg] 2xl:rotate-0" icon={ faUsersGear }/>
                 </div>
                 <div className="flex justify-center items-center rounded-r-lg bg-slate-800 absolute left-[-6.4rem] top-40 duration-300 w-36 h-12 text-lg shadow-lg shadow-slate-900 cursor-pointer 2xl:hover:left-0"
                   onClick={ () => this.handleClick(2) }
                 >
-                  <span className="select-none w-[70%] text-center">Movies</span>
+                  <span className="select-none w-[70%] text-center">Filmy</span>
                   <FontAwesomeIcon className="text-gray-200 w-[30%] rotate-[270deg] 2xl:rotate-0" icon={ faFilm }/>
                 </div>
                 <div className="flex justify-center items-center rounded-r-lg bg-slate-800 absolute left-[-8.4rem] top-56 duration-300 w-44 h-12 text-lg shadow-lg shadow-slate-900 cursor-pointer 2xl:hover:left-0"
                   onClick={ () => this.handleClick(3) }
                 >
-                  <span className="select-none w-[70%] text-center">Projections</span>
+                  <span className="select-none w-[70%] text-center">Promítání</span>
                   <FontAwesomeIcon className="relative left-1 text-gray-200 w-[30%] rotate-[270deg] 2xl:rotate-0" icon={ faTicket }/>
                 </div>
               </div>
