@@ -28,7 +28,7 @@ if($_GET["key"] == "SG91c2thc2VzYWxhbWVtamVkb2JyYTEyMw==")
         $reservation->upload($cusID);
         
         $response = "";
-        if(!empty(Projection::$error) || !empty(Hall::$error) || !empty(Seat::$error))
+        if(!empty(Projection::$error) || !empty(Hall::$error) || !empty(Seat::$error) || !empty(Reservation::$error))
         {
             $response = [Projection::$error, Hall::$error, Seat::$error];
         }
