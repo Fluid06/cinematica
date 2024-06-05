@@ -99,12 +99,12 @@ class Customer
 
         $sql = "UPDATE `customer`
         SET
-        `name` = '".$name."' ,
-        `surname` = '".$surname."' ,
-        `birthdate` = '".$birthdate."' ,
-        `phone_number` = '".$phone_number."' ,
-        `email` = '".$email."'
-        WHERE `ID` = ".$this->ID.";";
+        `name` = ? ,
+        `surname` = ? ,
+        `birthdate` = ? ,
+        `phone_number` = ? ,
+        `email` = ?
+        WHERE `ID` = ? ;";
 
         $stmt = $conn->prepare($sql);
         if (!$stmt) 
@@ -113,6 +113,7 @@ class Customer
             return;
         }
 
+        $stmt->bind_param("sssssi", $name, $surname, $birthdate, $phone_number, $email, $this->ID);
         if (!$stmt->execute()) 
         {
             self::$error[] = "update: No execute: $stmt->error";
@@ -137,7 +138,7 @@ class Customer
             return;
         }
 
-        $sql = "DELETE FROM `customer` WHERE `ID` = ".$this->ID.";";
+        $sql = "DELETE FROM `customer` WHERE `ID` = ? ;";
         $stmt = $conn->prepare($sql);
         if (!$stmt) 
         {
@@ -145,6 +146,7 @@ class Customer
             return;
         }
 
+        $stmt->bind_param("i", $this->ID);
         if (!$stmt->execute()) 
         {
             self::$error[] = "delete: No execute: $stmt->error";

@@ -132,14 +132,14 @@ class Movie
 
         $sql = "UPDATE `movie`
         SET
-        `name` = '".$name."',
-        `release_date` = '".$release_date."',
-        `length` = ".$length.",
-        `minimum_age` = ".$minimum_age.",
-        `director_name` = '".$director."',
-        `main_actor_name` = '".$actor."',
-        `description` = '".$description."'
-        WHERE `ID` = ".$this->ID.";";
+        `name` = ?,
+        `release_date` = ?,
+        `length` = ?,
+        `minimum_age` = ?,
+        `director_name` = ?,
+        `main_actor_name` = ?,
+        `description` = ?
+        WHERE `ID` = ?;";
 
         $stmt = $conn->prepare($sql);
         if (!$stmt) 
@@ -148,6 +148,7 @@ class Movie
             return;
         }
 
+        $stmt->bind_param("ssiisssi", $name, $release_date, $length, $minimum_age, $director, $actor, $description, $this->ID);
         if (!$stmt->execute()) 
         {
             self::$error[] = "update: No execute: $stmt->error";
@@ -181,7 +182,7 @@ class Movie
         {
             $projection->delete();
         }
-        $sql = "DELETE FROM `movie_genre` WHERE `ID-movie` = ".$this->ID.";";
+        $sql = "DELETE FROM `movie_genre` WHERE `ID-movie` = ?;";
         $stmt = $conn->prepare($sql);
         if (!$stmt) 
         {
@@ -189,13 +190,14 @@ class Movie
             return;
         }
 
+        $stmt->bind_param("i", $this->ID);
         if (!$stmt->execute()) 
         {
             self::$error[] = "delete: No execute: $stmt->error";
             return;
         }
 
-        $sql = "DELETE FROM `movie` WHERE `ID` = ".$this->ID.";";
+        $sql = "DELETE FROM `movie` WHERE `ID` = ?;";
         $stmt = $conn->prepare($sql);
         if (!$stmt) 
         {
@@ -203,6 +205,7 @@ class Movie
             return;
         }
 
+        $stmt->bind_param("i", $this->ID);
         if (!$stmt->execute()) 
         {
             self::$error[] = "delete: No execute: $stmt->error";

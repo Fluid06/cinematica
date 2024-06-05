@@ -94,7 +94,7 @@ class Projection
             return;
         }
 
-        $sql = "DELETE FROM `projection` WHERE `ID` = ".$this->ID.";";
+        $sql = "DELETE FROM `projection` WHERE `ID` = ?;";
         $stmt = $conn->prepare($sql);
         if (!$stmt) 
         {
@@ -102,6 +102,7 @@ class Projection
             return;
         }
 
+        $stmt->bind_param("i", $this->ID);
         if (!$stmt->execute()) 
         {
             self::$error[] = "delete: No execute: $stmt->error";

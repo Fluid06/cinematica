@@ -108,7 +108,7 @@ public function delete()
         return;
     }
 
-    $sql = "DELETE FROM `reservation_seat` WHERE `reservation_ID` = ".$this->ID.";";
+    $sql = "DELETE FROM `reservation_seat` WHERE `reservation_ID` = ?;";
     $stmt = $conn->prepare($sql);
     if (!$stmt) 
     {
@@ -116,13 +116,14 @@ public function delete()
         return;
     }
 
+    $stmt->bind_param("i", $this->ID);
     if (!$stmt->execute()) 
     {
         self::$error[] = "delete: No execute: $stmt->error";
         return;
     }
 
-    $sql = "DELETE FROM `reservation` WHERE `ID` = ".$this->ID.";";
+    $sql = "DELETE FROM `reservation` WHERE `ID` = ? ;";
     $stmt = $conn->prepare($sql);
     if (!$stmt) 
     {
@@ -130,6 +131,7 @@ public function delete()
         return;
     }
 
+    $stmt->bind_param("i", $this->ID);
     if (!$stmt->execute()) 
     {
         self::$error[] = "delete: No execute: $stmt->error";

@@ -127,7 +127,7 @@ class Image
             return;
         }
 
-        $sql = "DELETE FROM `image` WHERE `ID` = ".$this->ID.";";
+        $sql = "DELETE FROM `image` WHERE `ID` = ? ;";
         $stmt = $conn->prepare($sql);
         if (!$stmt) 
         {
@@ -135,6 +135,7 @@ class Image
             return;
         }
 
+        $stmt->bind_param("i", $this->ID);
         if (!$stmt->execute()) 
         {
             self::$error[] = "delete: No execute: $stmt->error";
