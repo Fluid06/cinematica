@@ -46,9 +46,9 @@ export default function ProgramSingleLine({data, login, setLogin, day}) {
 
     const cmpTimes = (time) => {
         let now = new Date();
-
+        
         if (day === 0) {
-            if (time < now.getHours() + ":" + now.getMinutes()) {
+            if (time < (now.getHours() < 10 ? "0" + now.getHours() : now.getHours()) + ":" + (now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes())) {
                 return true;
             } else {
                 return false;
